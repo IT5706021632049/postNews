@@ -1,38 +1,40 @@
 <template>
-  <div >
+  <div  class="font">
+    <h1 class="alert alert-info center" style="color : white"><span class="badge badge-secondary">Post</span>BhubejhrCare </h1>
 
-      <p class = "bg" style="color : white">BhubejhrCare</p>
+    <div  class="row">
 
-
-    <div id="">
+    <div class="col-sm">
       <div v-show ="showImage">
-        <img  :src="image"/>
+        <img  :src="image" class="border border-primary sizepic"/>
       </div>
-        <input type="file"  @change="onFileChange" />
-    </div><br>
+        <br>
+        <input type="file"  @change="onFileChange" class="bg" style="color : white"/>
+    </div>
 
-    <div class="field">
-      <label class="label">หัวข้อ</label>
-      <p class="control">
-        <textarea v-model="description" rows="2" cols="80" placeholder="Someting about photo"></textarea>
+    <div class="col-sm">
+    <div class="form-group">
+      <p class="">
+        <textarea v-model="description" rows="2" cols="50" placeholder="หัวข้อ"></textarea>
       </p>
     </div>
 
-    <div class="field">
-      <label class="label">รายละเอียด</label>
-        <p class="control">
-          <textarea v-model="comment" rows="2" cols="80" placeholder="Someting about photo"></textarea>
+    <div class="form-group">
+        <p class="">
+          <textarea v-model="comment" rows="4" cols="50" placeholder="รายละเอียด"></textarea>
         </p>
     </div>
 
     <div class="field is-grouped">
         <p class="control">
           <router-link to="/">
-            <button class="button is-success is-outlined" @click="addPostToApp($event)">Submit</button>
+            <button class="btn btn-primary btn-lg active" @click="addPostToApp($event)">โพสต์</button>
           </router-link>
         </p>
     </div>
 
+</div>
+</div>
   </div>
 </template>
 
@@ -82,17 +84,25 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style type="text/css">
-.head{
+@import url('https://fonts.googleapis.com/css?family=Prompt&subset=thai');
+.font{
+     font-family: 'Prompt', sans-serif;
+}
+.center{
+  text-align: center;
   width: 100%;
-  height: 40px;
-  display: inline-block;
-  background:#00352c;
-  box-shadow: 0 0 5px #000;
-  position: fixed;
+  background-color: #00352c;
 }
 .bg{
-    background:#00352c;
-    width: 100%;
+  background-color: #00352c;
 }
-
+.sizepic{
+  max-width: 80%;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  background-color: #efefef;
+  color: #ecf0f1;
+  margin: auto;
+}
 </style>
